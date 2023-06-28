@@ -20,10 +20,12 @@ export async function getStaticProps() {
   /* const urlServer = "http://localhost:8000";
   const response = await fetch(urlServer);
   const data = response.json(); */
-  let result = await fetch(".netlify/functions/about-data");
+  /*  let result = await fetch(".netlify/functions/about-data");
   let data = await result.json();
   const { name, subname } = data;
-
+ */
+  const name = "Jose";
+  const subname = "SubnameServer";
   return {
     props: {
       name,
