@@ -17,14 +17,17 @@ const About = ({ name, subname }: { name: string; subname: string }) => {
 
 export async function getStaticProps() {
   // Fetch data from an API or perform any async operations
-  const urlServer = "http://localhost:8000";
+  /* const urlServer = "http://localhost:8000";
   const response = await fetch(urlServer);
-  const data = response.json();
+  const data = response.json(); */
+  let result = await fetch(".netlify/functions/about-data");
+  let data = await result.json();
+  const { name, subname } = data;
 
   return {
     props: {
-      name: "Jose",
-      subname: "Props",
+      name,
+      subname,
     },
     // Re-generate this page every 10 seconds (for demonstration purposes)
     revalidate: 10,
