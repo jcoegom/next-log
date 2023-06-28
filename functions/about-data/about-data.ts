@@ -1,5 +1,7 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
-const handler = async (event) => {
+import { Handler } from "@netlify/functions";
+
+const handler = async (event: any) => {
   try {
     const subject = event.queryStringParameters.name || "World";
     return {
@@ -10,7 +12,7 @@ const handler = async (event) => {
       // isBase64Encoded: true,
     };
   } catch (error) {
-    return { statusCode: 500, body: error.toString() };
+    return { statusCode: 500, body: (error as any).toString() };
   }
 };
 
