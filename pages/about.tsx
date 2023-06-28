@@ -17,6 +17,9 @@ const About = ({ name, subname }: { name: string; subname: string }) => {
 
 export async function getStaticProps() {
   // Fetch data from an API or perform any async operations
+  const urlServer = "http://localhost:8000";
+  const response = await fetch(urlServer);
+  const data = response.json();
 
   return {
     props: {
