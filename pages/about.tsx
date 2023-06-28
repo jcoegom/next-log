@@ -20,9 +20,17 @@ export async function getStaticProps() {
   /* const urlServer = "http://localhost:8000";
   const response = await fetch(urlServer);
   const data = response.json(); */
-  let result = await fetch(".netlify/functions/about-data");
-  let data = await result.json();
-  const { name, subname } = data;
+  let name = "";
+  let subname = "";
+  let data = null;
+  try {
+    let result = await fetch(".netlify/functions/about-data");
+    data = await result.json();
+  } catch (err) {
+    console.log("ERRORRRRRRRRRRRRRRRRr", err);
+  }
+  name = data?.name ?? "nameNotReceived";
+  subname = data?.subname ?? "subnameNotReceived";
 
   return {
     props: {
