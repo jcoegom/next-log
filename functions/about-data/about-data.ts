@@ -2,6 +2,7 @@
 import { Handler } from "@netlify/functions";
 
 const handler: Handler = async (event: any) => {
+  const idPage = Math.floor(Math.random() * 10000).toString(32);
   try {
     const subject = event.queryStringParameters.name || "World";
     return {
