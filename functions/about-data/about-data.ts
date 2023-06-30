@@ -7,7 +7,10 @@ const handler: Handler = async (event: any) => {
     const subject = event.queryStringParameters.name || "World";
     return {
       statusCode: 200,
-      body: JSON.stringify({ name: "Jose", subname: "Serverless function" }),
+      body: JSON.stringify({
+        name: "Jose " + idPage,
+        subname: "Serverless function",
+      }),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
