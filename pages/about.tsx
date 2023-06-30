@@ -24,7 +24,10 @@ export async function getStaticProps() {
   let subname = "";
   let data = null;
   try {
-    let result = await fetch(".netlify/functions/about-data");
+    //function is called from server, so, we need to use endpoint.
+    let result = await fetch(
+      "https://logerrors.netlify.app/.netlify/functions/about-data"
+    );
     data = await result.json();
   } catch (err) {
     console.log("ERRORRRRRRRRRRRRRRRRr", err);
