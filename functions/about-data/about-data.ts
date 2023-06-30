@@ -1,7 +1,7 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 import { Handler } from "@netlify/functions";
 
-const handler = async (event: any) => {
+const handler: Handler = async (event: any) => {
   try {
     const subject = event.queryStringParameters.name || "World";
     return {
