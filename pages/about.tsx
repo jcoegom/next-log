@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const About = ({ name, subname }: { name: string; subname: string }) => {
@@ -11,6 +12,7 @@ const About = ({ name, subname }: { name: string; subname: string }) => {
       name:{name}
       <br />
       subname:{subname}
+      <Link href={"/"}>Home</Link>
     </div>
   );
 };

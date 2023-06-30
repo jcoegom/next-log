@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function Home() {
       </Head>
       <main>
         <h1>Home</h1>
+        <Link href={"/about"}>About Us</Link>
       </main>
     </>
   );
