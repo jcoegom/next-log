@@ -3,6 +3,7 @@ import { Handler } from "@netlify/functions";
 
 const handler: Handler = async (event: any) => {
   const idPage = new Date().getTime().toString();
+  console.log("idPage: ", idPage);
   try {
     const subject = event.queryStringParameters.name || "World";
     return {
