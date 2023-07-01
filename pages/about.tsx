@@ -43,7 +43,7 @@ export async function getStaticProps() {
       subname,
     },
     // Re-generate this page every 10 seconds (for demonstration purposes)
-    revalidate: 20,
+    revalidate: 60,
   };
 }
 
