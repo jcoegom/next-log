@@ -10,5 +10,5 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   console.log("pasaaaaaa Logger", req);
-  res.status(200).json({ name: "John Doe" });
+  res.status(200).json({ name: "John Doe 1" });
 }
