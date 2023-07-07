@@ -12,6 +12,9 @@ export default function Home() {
     fetch(".netlify/functions/hello-world")
       .then((x) => x.json())
       .then((data) => console.log(data));
+    fetch("https://logerrors.netlify.app/api/logger")
+      .then((x) => x.json())
+      .then((data) => console.log(data));
   }, []);
   return (
     <>
