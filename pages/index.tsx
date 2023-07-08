@@ -14,7 +14,8 @@ export default function Home() {
       .then((data) => console.log(data));
     fetch("https://logerrors.netlify.app/api/logger")
       .then((x) => x.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data))
+      .catch((err) => console.log("eerrorrrr", err));
   }, []);
   return (
     <>
