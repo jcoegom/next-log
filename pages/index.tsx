@@ -4,6 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
 import Link from "next/link";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,25 @@ export default function Home() {
       .then((x) => x.json())
       .then((data) => console.log(data))
       .catch((err) => console.log("eerrorrrr", err));
+
+    const options = {
+      method: "GET",
+      url: "https://eod-historical-data.p.rapidapi.com/intraday/AAPL.US",
+      params: {
+        interval: "1h",
+        fmt: "json",
+        from: "1564752900",
+        to: "1564753200",
+      },
+      headers: {
+        "X-RapidAPI-Key": "d650b29ac5msh8c6de21fe654891p1d24ddjsn08b7b8ac5448",
+        "X-RapidAPI-Host": "eod-historical-data.p.rapidapi.com",
+      },
+    };
+    axios
+      .request(options)
+      .then((res) => console.log(res?.data))
+      .catch((err) => console.log(err));
   }, []);
   return (
     <>
