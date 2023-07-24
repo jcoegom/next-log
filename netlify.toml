@@ -2,3 +2,7 @@
     publish=".next"
     command="next build"
     functions="functions"
+
+[[edge_functions]]
+function = "my-header"
+path = "/test"
