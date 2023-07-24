@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const About = ({ name, subname }: { name: string; subname: string }) => {
   const router = useRouter();
   const { value } = router.query;
   if (value == "err") throw new Error("Value error");
+  useEffect(() => {
+    fetch(".netlify/functions/my-function")
+      .then((x) => x.json())
+      .then((data) => console.log(data));
+  }, []);
   return (
     <div>
       About
